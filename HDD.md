@@ -47,7 +47,9 @@ BACKUP AUF EXTERNE FESTPLATTE
 -----------------------------
 
 HDD im Dateisystem aktivieren
-> sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sdb1 /media/usbHDD2
+> sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sdb1 /media/usbHDD2 
+
+> sudo mount -t ext4 /dev/sda1 /media/usbHDD2 
 
 Starten der Terminal-Sitzung
 > screen
