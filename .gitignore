@@ -1,1 +1,8 @@
 /Konfigurationsdateien/
+css/
+fonts/
+js/
+lib/
+/Oberflächen/
+/Syncthing/
+*.holiday

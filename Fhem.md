@@ -1,5 +1,5 @@
-FHEM
-====
+# FHEM
+
 Installation von Raspbian + FHEM + Zugriff auf das [I2C](I2C.md) Protololl
 
 Raspbian Image mit Win32DiskImager auf eine SD Karte schreiben.  
@@ -30,7 +30,7 @@ Aktualisieren des Betriebssystem
 
 Installieren von Paketen die für FHEM + I2C benötigt werden.
 
-> sudo apt-get -f install && sudo apt-get install perl libdevice-serialport-perl libio-socket-ssl-perl libwww-perl libxml-simple-perl mplayer mp3wrap libjson-perl i2c-tools git-core libcgi-pm-perl sqlite3 libdbd-sqlite3-perl libtext-diff-perl -y
+> sudo apt-get -f install && sudo apt-get install perl libdevice-serialport-perl libio-socket-ssl-perl libwww-perl libxml-simple-perl libjson-perl i2c-tools git libcgi-pm-perl sqlite3 libdbd-sqlite3-perl libtext-diff-perl -y (mal ohne folgende Pakete versucht: mplayer mp3wrap)
 
 Umstellen der Bus-Geschwindigkeit des I2C
 > sudo nano /boot/config.txt  
@@ -38,7 +38,7 @@ Umstellen der Bus-Geschwindigkeit des I2C
 
 
 Herunterladen und Installieren von FHEM
-> sudo wget http://fhem.de/fhem-5.9.deb && sudo dpkg -i fhem-5.9.deb && rm fhem-5.9.deb  
+> sudo wget http://fhem.de/fhem-6.0.deb && sudo dpkg -i fhem-6.0.deb && rm fhem-6.0.deb  
 
 Rechte korrigieren
 > cd /opt && sudo chmod -R a+w fhem && sudo usermod -a -G tty pi && sudo usermod -a -G tty fhem
@@ -57,18 +57,14 @@ Hinzufügen weiterer Quellen für FHEM Pakete in der Komandozeile von FHEM (ganz
 `update all`  
 `shutdown restart`  
 
-----------------------------
+---
 
-HUE Emulation zur Integration FHEM+Home+Alexa+Harmony
-=========================================================
+## HUE Emulation zur Integration FHEM+Home+Alexa+Harmony
 
-INSTALLATION HA BRIDGE
------------------------
-
-Java installieren
+### Java installieren
 > sudo apt-get install oracle-java8-jdk  
 
-HaBridge installieren
+### HaBridge installieren
 > sudo mkdir -p /opt/habridge /etc/habridge /etc/habridge/data  
 > sudo wget https://github.com/bwssytems/ha-bridge/releases/download/v4.5.6/ha-bridge-4.5.6.jar -O /opt/habridge/ha-bridge.jar
 
@@ -99,16 +95,13 @@ sudo systemctl enable habridge.service
 Die HaBridge ist nun installiert und die Webseite des dienstes kann aufgerufen werden.
 
 
-FHEM Konfiguration 
--------------------
+### FHEM Konfiguration 
 
 `define WEBhabridge FHEMWEB 8088 global`  
 `attr WEBhabridge csrfToken none`  
 `attr WEBhabridge allowfrom 127.0.0.1|192.168.1.10`  
 
-
-HA Bridge Konfiguration
-------------------------
+### HA Bridge Konfiguration
 
 Beispieleinträge:
 Ziel | Typ | Befehl | Art | Kodierung
@@ -118,3 +111,8 @@ Ziel | Typ | Befehl | Art | Kodierung
 | OFF | HTTP Device  | http://hauszentrale:8088/fhem?cmd=set%20RolloEssen%20closed&XHR=1 | GET | text/html
 | DIM | HTTP Device | http://hauszentrale:8088/fhem?cmd=set%20RolloEssen%20position%20${intensity.percent}&XHR=1 | GET | text/html
 | ON  | HTTP Device | http://hauszentrale:8088/fhem?cmd=set%20RolloEssen%20open&XHR=1 | GET | text/html
+
+## Weitere Module
+
+* [Telegram](Ubuntu.md)
+* [Google Home](Ubuntu.md)

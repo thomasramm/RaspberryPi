@@ -8,7 +8,9 @@ Paketverwaltung
 | upgrade all your packages: |	sudo apt-get dist-upgrade |
 | Paktedownloads bereinigen: |	sudo apt-get clean |
 | Paket installieren: |		sudo apt-get install [paketname] |
-| Paket suchen	|		apt-cache search [paketname] |
+| Paket suchen	|		sudo apt-cache search [paketname] |
+| Paket entfernen: | sudo apt-get --purge remove [paketname] |
+| nicht benötigte Pakete entfernen: | sudo apt autoremove |
 
 TAR Archive
 -----------

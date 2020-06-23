@@ -36,6 +36,7 @@ sudo mv syncthing@.service /etc/systemd/system/syncthing@.service
 
 sudo systemctl enable syncthing@pi.service
 sudo systemctl start syncthing@pi.service
+sudo systemctl stop syncthing@pi.service
 ````
 
 Dateifreigabe im Netz siehe Samba.md
