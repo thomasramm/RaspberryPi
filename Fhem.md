@@ -26,11 +26,12 @@ Neustart des Raspberry
 > sudo reboot 
 
 Aktualisieren des Betriebssystem
-> sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo reboot  
+> sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo reboot  
 
 Installieren von Paketen die für FHEM + I2C benötigt werden.
 
-> sudo apt-get -f install && sudo apt-get install perl libdevice-serialport-perl libio-socket-ssl-perl libwww-perl libxml-simple-perl libjson-perl i2c-tools git libcgi-pm-perl sqlite3 libdbd-sqlite3-perl libtext-diff-perl -y (mal ohne folgende Pakete versucht: mplayer mp3wrap)
+> sudo apt install perl libdevice-serialport-perl libio-socket-ssl-perl libwww-perl libxml-simple-perl libjson-perl i2c-tools git libcgi-pm-perl sqlite3 libdbd-sqlite3-perl libtext-diff-perl -y 
+(mal ohne folgende Pakete versucht: mplayer mp3wrap)
 
 Umstellen der Bus-Geschwindigkeit des I2C
 > sudo nano /boot/config.txt  

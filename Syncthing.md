@@ -12,7 +12,7 @@ Einbinden der Debian Quellen in die Liste erlaubter Paketquellen
 echo "deb http://apt.syncthing.net/ syncthing release" | tee -a /etc/apt/sources.list.d/syncthing-release.list
 
 Update der Paketlisten & installieren & starten. Dabei wird ein Key generiert.
-> apt-get update && apt-get install syncthing && syncthing
+> sudo apt update && sudo apt install syncthing && syncthing
 
 Programm wieder beenden mit [Strg]+[C]
 
@@ -32,9 +32,11 @@ bin mir nicht sicher ob das überhaupt noch notwendig ist: installieren des Quel
 apt-get install git
 git clone https://github.com/syncthing/syncthing
 cd syncthing/etc/linux-systemd/system
+cd /lib/systemd/system/
+sudo systemctl enable syncthing@username.service
 sudo mv syncthing@.service /etc/systemd/system/syncthing@.service
 
-sudo systemctl enable syncthing@pi.service
+sudo systemctl enable syncthing@[username].service
 sudo systemctl start syncthing@pi.service
 sudo systemctl stop syncthing@pi.service
 ````

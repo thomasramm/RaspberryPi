@@ -1,7 +1,23 @@
+<!-- vscode-markdown-toc -->
+* 1. [Paketverwaltung](#Paketverwaltung)
+* 2. [TAR Archive](#TARArchive)
+* 3. [Dienste steuern](#Dienstesteuern)
+* 4. [Zeitgesteuerte Befehle](#ZeitgesteuerteBefehle)
+* 5. [Scripte schreiben](#Scripteschreiben)
+* 6. [Netzwerk-Konfiguration](#Netzwerk-Konfiguration)
+* 7. [I2C - Bus](#I2C-Bus)
+* 8. [Screen](#Screen)
+* 9. [Sonstige Befehle](#SonstigeBefehle)
 
-Paketverwaltung
----------------
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 
+# Nützliche Dienste und Befehle für den Raspberry Pi
+
+##  1. <a name='Paketverwaltung'></a>Paketverwaltung
 | Beschreibung | Befehl |
 |-|-|
 | Paketindex aktualisieren: |	sudo apt-get update |
@@ -12,23 +28,19 @@ Paketverwaltung
 | Paket entfernen: | sudo apt-get --purge remove [paketname] |
 | nicht benötigte Pakete entfernen: | sudo apt autoremove |
 
-TAR Archive
------------
+##  2. <a name='TARArchive'></a>TAR Archive
 | Beschreibung | Befehl |
 |-|-|
 | Tar-Archiv entpacken      |	sudo tar xvzf [archivname].tar.gz |
 | Ordner in Archiv packen   |	sudo tar -cvzf ./fhem.tar.gz fhem/ |
 | Ordner rekursiv löschen   |	rm -r fhem |
 
-Dienste steuern
----------------
-
+##  3. <a name='Dienstesteuern'></a>Dienste steuern
 * service syncthing start
 * service syncthing stop
 * service syncthing reload
 
-Zeitgesteuerte Befehle
-----------------------
+##  4. <a name='ZeitgesteuerteBefehle'></a>Zeitgesteuerte Befehle
 ````
 crontab -e
 #Minute Stunde Tag Monat Wochentag (0=Sonntag, 1=Montag)
@@ -36,8 +48,8 @@ crontab -e
 */1 * * * * /opt/fhem/log/i2cwatchdog.sh #minütlich
 ````
 
-Scripte schreiben
------------------
+##  5. <a name='Scripteschreiben'></a>Scripte schreiben
+
 Beispiel eines Script das Dateien in einem Ordner sichert.
 ````
 nano syncthing_backup.sh
@@ -45,8 +57,8 @@ nano syncthing_backup.sh
 sudo tar -cvzf /media/hdd2tb/Thomas/Projekte/RaspberryPi/Eigene\ Dateien/syncthing_config.tar.gz ~/.config/syncthing/
 ````
 
-Netzwerk-Konfiguration
-----------------------
+##  6. <a name='Netzwerk-Konfiguration'></a>Netzwerk-Konfiguration
+
 Hardware prüfen
 > ifconfig -a 		
 
@@ -58,8 +70,7 @@ WLAN de-/aktivieren
 > sudo ifconfig wlan0 down  
 > sudo ifconfig wlan0 up  
 
-I2C - Bus
----------
+##  7. <a name='I2C-Bus'></a>I2C - Bus
 Auslesen der am Bus hängenden I2C-Module (Bus1)
 > i2cdetect -y 1
 
@@ -80,8 +91,7 @@ Abfragen der aktuellen Bus-Geschwindigkeit
 * dtparam=i2c_arm=on
 * dtparam=i2c1_baudrate=32000`
 
-Screen
-------
+##  8. <a name='Screen'></a>Screen
 Ausführen von länger laufenden Befehlen, ohne das das SSH Terminal offen bleiben muss
 
 Starten des Dienstes
@@ -97,3 +107,7 @@ später wieder eine neue SSH Sitzung starten und die Screen Sitzung wieder aktiv
 
 Auflisten der Namen aller laufenden Screen-Sitzungen:	
 > screen -ls 
+
+##  9. <a name='SonstigeBefehle'></a>Sonstige Befehle
+Ausgabe des aktuellen Raspberry Pi Model
+> cat /proc/device-tree/model
