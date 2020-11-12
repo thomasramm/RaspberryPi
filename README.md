@@ -9,7 +9,7 @@ Anleitungen und Hilfestellungen rund um den RaspberryPI
 
 
 ## Haussteuerung ##
-* [FHEM](FHEM.md)
+* [FHEM](Fhem.md)
 * [I2C](I2C.md)
 
 ## Dateisynchronisierung ##
