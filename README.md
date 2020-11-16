@@ -24,7 +24,7 @@ Anleitungen und Hilfestellungen rund um den RaspberryPI
 ## Multimedia ##
 
 * [OSMC](OSMC.md)
-* [Easy Kongress Player Box](KongressPlayer/README.md) Eine Box die ganze Programmfolgen (Videos) abspielen kann
+* [Easy Kongress Player Box](EasyKongressPlayer/README.md) Eine Box die ganze Programmfolgen (Videos) abspielen kann
 
 ## Hardware ##
 GPIO Pin Belegung bei B+ Boards
