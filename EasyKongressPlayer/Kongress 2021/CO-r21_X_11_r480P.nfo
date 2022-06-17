@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<movie>
+    <title>Sonntag Nachmittag 1</title>
+    <sorttitle>Kongress 11</sorttitle>
+    <userrating>0</userrating>
+    <top250>0</top250>
+    <outline></outline>
+    <plot></plot>
+    <tagline></tagline>
+    <runtime>65</runtime>
+    <mpaa></mpaa>
+    <playcount>0</playcount>
+    <lastplayed></lastplayed>
+    <id></id>
+    <uniqueid default="true" type="imdb"></uniqueid>
+    <genre>Kongress</genre>
+    <genre>Sonntag</genre>
+    <credits></credits>
+    <director></director>
+    <premiered></premiered>
+    <year></year>
+    <trailer></trailer>
+    <fileinfo>
+        <streamdetails>
+            <video>
+                <durationinseconds>3916</durationinseconds>
+                <codec>h264</codec>
+                <aspect>1.778</aspect>
+                <width>960</width>
+                <height>540</height>
+                <scantype>progressive</scantype>
+            </video>
+            <audio>
+                <codec>aac</codec>
+                <channels>2</channels>
+            </audio>
+            <subtitle>
+                <language>deu</language>
+            </subtitle>
+        </streamdetails>
+    </fileinfo>
+    <resume>
+        <position>0</position>
+        <total>0</total>
+    </resume>
+    <generator>
+        <appname>MediaElch</appname>
+        <appversion>2.8.16</appversion>
+        <kodiversion>19</kodiversion>
+        <datetime>2022-06-15T18:09:06Z</datetime>
+    </generator>
+</movie>

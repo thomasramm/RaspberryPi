@@ -14,10 +14,39 @@ Für den KongressPlayer kam mir die Idee es genauso zu machen, hier gibt es aber
 ## Lösung
 Meine Lösung war deshalb:
 * Installieren von OSMC (Kodi) als Abspielplattform
-* Bedienung über zwei Taster: Play/Pause + Nächstes Video, die Taster können am GPIO des Raspi angeschlossen werden und dann Scripte aktivieren, die die Befehle in Kodi umsetzen.
-* Optional: Bedienung über die TV Fernbedienung (HDMI CEC)
+* Bedienung über die TV Fernbedienung (HDMI CEC)
+* Optional: Bedienung über zwei Taster: Play/Pause + Nächstes Video, die Taster können am GPIO des Raspi angeschlossen werden und dann Scripte aktivieren, die die Befehle in Kodi umsetzen. Das habe ich aber bisher noch nicht umgesetzt.
 
-Bei der Suche nach kleinen Tastern die ich in ein RasPi Gehäuse einbauen kann, bin ich über ein Angebot für das SuperPi-Gehäuse gestoßen. Für 5€ im Angebot war es sogar günstiger als alle anderen halbwegs vernünftigen Gehäuse, es gibt genug Platz um kleine Taster einzubauen und das beste: Über eine Erweiterungsplatine gibt es einen "Echten" Ein-Aus-Schalter am Gehäuse. Perfekt :-)
+Bei der Oberfläche habe ich 3 Favoriten mit ihren eigenen Vor- und Nachteilen:
+
+### fTV (Favorit)
+[Video](KongressPlayer_fTV.mp4)
+Pro
+* Hier gibt es in der Bedienung gefühlt nur 1 Ebene
+* Es gibt keine "Sackgassen" die über "Zurück" beendet werden müssten, man wechselt die Ebenen durch drücken auf Links / Rechts.
+* Die Anzeige ist sehr minimalistisch
+Contra
+* Gesehene / Neue Filme werden nicht hervorgehoben
+* Bei der Auswahl eines Videos werden unter dem Video weitere Menüpunkte angezeigt, die leider nicht ausgeblendet werden können
+
+### Mimic-LR
+[Video](KongressPlayer_MimicLR.mp4)
+Pro
+* Wird nur das Hauptmenü benutzt, Übersichtliche Darstellung aller Videos
+* Darstellung des Video-Status "Laufend, Gesehen"
+Contra
+* Zwei Video-Ebenen (Hauptseite vs. Klick auf die Kategorie)
+* Von der zweiten Ebene auf die Hauptseite kommt man nur über eine Zusätzliche Taste "Zurück"
+* 
+
+### ArcticZephyr
+[Video](KongressPlayer_ArcticZephyr.mp4)
+Pro
+* Hintergrundbild je Kategorie einstellbar
+* Beste Darstellung des Video-Status "Neu, Laufend, Gesehen"
+Contra
+* Zwei Video-Ebenen (Hauptseite vs. Klick auf die Kategorie)
+* Von der zweiten Ebene auf die Hauptseite kommt man nur über eine Zusätzliche Taste "Zurück"
 
 ## Anleitung
 In diesem Projekt habe ich (hoffentlich) alle Schritte aufgezeichnet die Notwendig sind um dieses Projekt nachzubauen.
@@ -25,12 +54,11 @@ Der Aufbau besteht aus drei Teilen:
 
 1. [Notwendige Hard- und Software](Einkaufsliste.md)
 
-1. [Installation und Einrichtung des Betriebssystem](Installation.md), inkl. Anpassen der Oberfläche.
-: Dieser Schritt ist nur einmalig notwendig, statt die Einrichtung nachzubauen, kann auch ein fertiges Image heruntergeladen werden.
+2. [Vorbereiten der Videos](Medienbibliothek.md)
 
-2. [Vorbereiten der Videos und überspielen auf den Pi](Einrichten.md)
-: Dieser Schritt ist nach jedem Kongress notwendig, die Dateien könnten dann aber untereinander ausgetauscht werden um sich Arbeit zu ersparen.
+   Dieser Schritt ist nach jedem Kongress notwendig.
 
-Ich habe ein paar Schritte auch als Video aufgenommen und in der Anleitung verlinkt.
+3. [Installation und Einrichtung des Betriebssystem](Installation.md), inkl. Anpassen der Oberfläche.
 
-[Video Oberfläche]
+   Die Installation und Einrichtung ist natürlich nur einmalig notwendig, lediglich das Kopieren neuer Daten muss per Hand erfolgen.
+
